@@ -1,0 +1,35 @@
+﻿@model List<Dog>
+
+<h1>Our dogs</h1>
+
+<div class="row">
+    @foreach (var dog in Model.OrderBy(d => d.Name))
+    {
+        <div class="col-md-4">
+            <div class="card" style="margin-bottom:20px;">
+                <a asp-controller="Dogs" asp-action="DogDetails" asp-route-id="@dog.Id">
+                    <img src="~/DogImages/@dog.Image" class="card-img-top" alt="@dog.Name" style="cursor:pointer;" />
+                </a>
+                <div class="card-body">
+
+                    <h5 class="card-title">@dog.Name</h5>
+
+                    <a asp-controller="Dogs" asp-action="DogDetails" asp-route-id="@dog.Id" class="btn btn-secondary">
+                        View details
+                    </a>
+
+                    @if (!dog.IsAdopted)
+                    {
+                        <a asp-controller="Dogs" asp-action="Adopted" asp-route-id="@dog.Id" class="btn btn-primary">
+                            Adopt dog!
+                        </a>
+                    }
+                    else
+                    {
+                        <span class="badge text-bg-success">Already adopted</span>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
