@@ -4,8 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] CuteDogs</title>
+
+    @* Här anges att applikationen använder importmap som en del av ES-moduler.  
+    ES-moduler är en ny standard för att hantera JavaScript-moduler i webbläsare. *@
     <script type="importmap"></script>
+
+     @* Här anges att applikationen använder BOOTSTRAP *@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    @* Här anges de css-filer som används av applikationen *@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CuteDogs.styles.css" asp-append-version="true" />
 </head>

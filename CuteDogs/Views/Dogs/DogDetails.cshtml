@@ -1,23 +1,31 @@
-﻿@model CuteDogs.Models.Dog
+﻿@model Dog
 
 <h1>About @Model.Name</h1>
 
-<img src="~/DogImages/@Model.Image" alt="@Model.Name" style="max-width:300px;" />
-
+<aside class="doggyimage">
+    <img src="~/DogImages/@Model.Image" alt="@Model.Name" style="max-width:300px;" />
+</aside>
+        
 <ul>
     <li>Cuteness: @Model.Cuteness/10</li>
     <li>Temperament: @Model.Temperament/10</li>
     <li>Favourite food: @Model.FavFood</li>
     <li>Favourite toy: @Model.FavToy</li>
 </ul>
-
-<a asp-controller="Dogs" 
-asp-action="Adopted" 
-asp-route-id="@Model.Id" 
-class="btn btn-primary">
-    Adopt this dog!
-</a>
-
-<a asp-controller="Dogs" asp-action="Start" class="btn btn-secondary">
-    Back to all dogs
-</a>
+<div class="buttonspace">
+    <div class="card-status">
+    @if (!Model.IsAdopted)
+    {
+        <a asp-controller="Dogs" asp-action="Adopted" asp-route-id="@Model.Id" class="btn btn-primary">
+            Adopt me!
+        </a>
+    }
+    else
+    {
+        <span class="badge text-bg-success disabled" style="padding: 15px; font-size:16px;">Already adopted</span>
+    }
+    </div>
+    <a asp-controller="Dogs" asp-action="Start" class="btn btn-secondary">
+        Back to all dogs
+    </a>
+</div>

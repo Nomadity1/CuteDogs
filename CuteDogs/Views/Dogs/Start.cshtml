@@ -9,27 +9,17 @@
             <div class="card" style="margin-bottom:20px;">
                 <a asp-controller="Dogs" asp-action="DogDetails" asp-route-id="@dog.Id">
                     <img src="~/DogImages/@dog.Image" class="card-img-top" alt="@dog.Name" style="cursor:pointer;" />
-                </a>
-                <div class="card-body">
-
-                    <h5 class="card-title">@dog.Name</h5>
-
-                    <a asp-controller="Dogs" asp-action="DogDetails" asp-route-id="@dog.Id" class="btn btn-secondary">
-                        View details
                     </a>
-
-                    @if (!dog.IsAdopted)
+                <div class="card-body">
+                    <h5 class="card-title">@dog.Name</h5>
+                </div>
+                <div class="card-status">
+                    @if (dog.IsAdopted)
                     {
-                        <a asp-controller="Dogs" asp-action="Adopted" asp-route-id="@dog.Id" class="btn btn-primary">
-                            Adopt dog!
-                        </a>
-                    }
-                    else
-                    {
-                        <span class="badge text-bg-success">Already adopted</span>
+                        <span class="badge text-bg-success" style="padding: 15px; font-size:16px;">Already adopted</span>
                     }
                 </div>
             </div>
         </div>
-    }
-</div>
+    } 
+</div> 

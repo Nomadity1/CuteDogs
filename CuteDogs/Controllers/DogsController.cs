@@ -41,7 +41,8 @@ namespace CuteDogs.Controllers
             {
                 adopted.IsAdopted = true;
             }
-            return RedirectToAction("Start");
+            // SKICKAR den adopterade hunden till bekräftelsevyn
+            return View(adopted);
         }
     }
 }
