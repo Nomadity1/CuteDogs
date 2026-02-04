@@ -10,7 +10,6 @@
             <div class="card" style="margin-bottom:20px;">
                 <a asp-controller="Dogs" asp-action="Details" asp-route-id="@dog.Id">
                     <img src="~/DogImages/@dog.Image" class="card-img-top" alt="@dog.Name" style="cursor:pointer;" />
-<<<<<<< HEAD
                 </a>
                 <div class="card-body">
                     <h5 class="card-title">@dog.Name</h5>
@@ -19,6 +18,8 @@
                     <a asp-controller="Dogs" asp-action="Details" asp-route-id="@dog.Id" class="btn btn-secondary">
                         View details
                     </a>
+                </div>
+                <div class="card-status">
                     @if (!dog.IsAdopted)
                     {
                         @* "Dogs" och "Adopted" är här bara lokala namn och kan döpas till vad som helst! *@
@@ -30,19 +31,9 @@
                     else
                     {
                         <span class="badge text-bg-success">Already adopted</span>
-=======
-                    </a>
-                <div class="card-body">
-                    <h5 class="card-title">@dog.Name</h5>
-                </div>
-                <div class="card-status">
-                    @if (dog.IsAdopted)
-                    {
-                        <span class="badge text-bg-success" style="padding: 15px; font-size:16px;">Already adopted</span>
->>>>>>> 2d0e83b6131f47add1773f140a80fad8a26c722a
                     }
                 </div>
             </div>
         </div>
-    } 
-</div> 
+    }
+</div>

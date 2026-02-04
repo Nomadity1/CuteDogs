@@ -59,16 +59,12 @@ li {
     margin: 3px;
 }
 .badge {
-    margin: 3px;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    margin-top: 3px;
+    padding-top: 14px;
+    padding-bottom: 14px;
     font-size: 12pt;
     font-weight: normal;
 }
 li {
     list-style-type: none; 
-}
-=======
-    object-fit: cover;*/ /* Ensures the image covers the area without distortion */
-/*}*/
->>>>>>> 2d0e83b6131f47add1773f140a80fad8a26c722a
+} 
