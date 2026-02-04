@@ -1,0 +1,28 @@
+﻿@model CuteDogs.Models.Dog
+
+<h1>About @Model.Name</h1>
+
+<img src="~/DogImages/@Model.Image" alt="@Model.Name" style="max-width:300px;" />
+
+<ul>
+    <li>Cuteness: @Model.Cuteness/10</li>
+    <li>Temperament: @Model.Temperament/10</li>
+    <li>Favourite food: @Model.FavFood</li>
+    <li>Favourite toy: @Model.FavToy</li>
+</ul>
+
+@if (!Model.IsAdopted)
+{
+    @* "Dogs" och "Adopted" är här bara lokala namn och kan döpas till vad som helst! *@
+    @* Men konventionen är att ange "Förnamnet" ("Dogs", "Adopted") till Controllern (alltså minus "Controller") *@
+    <a asp-controller="Dogs" asp-action="Adopted" asp-route-id="@Model.Id" class="btn btn-primary">
+        Adopt this dog!
+    </a>
+} 
+else
+{
+    <span class="badge text-bg-success">Already adopted</span>
+}
+<a asp-controller="Dogs" asp-action="Start" class="btn btn-secondary">
+    Back to all dogs
+</a>

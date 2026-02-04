@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CuteDogs.Controllers
 {
+    // CONTROLLER: Action-metoder, Länkar mellan Models och Views 
     public class DogsController : Controller
     {
         // LÅTSASDATABAS i form av en statisk lista
-        private static List<Dog> _dogs = new List<Dog>
+        private static List<Dog> _dogs = new List<Dog> // beroende av modellen Dog (modellen Dog anger listans typ) 
         {
             new Dog{ Id = 1, Name = "Lady Gaga", Cuteness = 9, Image = "dog1.jpg", FavFood = "Barkoni", FavToy = "Barkle", Temperament = 7, IsAdopted= false },
             new Dog{ Id = 2, Name = "Lady Swaggertail", Cuteness = 8, Image = "dog2.jpg", FavFood = "Pawsta", FavToy = "Fetch Stick", Temperament = 6, IsAdopted= false },
@@ -22,7 +23,7 @@ namespace CuteDogs.Controllers
             return View(allDogs);
         }
         // METOD för att VISA detaljer om en specifik hund baserat på dess Id 
-        public IActionResult DogDetails(int id)
+        public IActionResult Details(int id)
         {
             //// ANGER att listan ska visa titel 
             //ViewData["Title"] = "Våra hundar";
